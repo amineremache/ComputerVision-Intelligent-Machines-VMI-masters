@@ -1,0 +1,394 @@
+@prefix ns0:    <http://chintan.com/physics/> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+
+#physics_classes
+
+#chapter into
+
+ns0:Scientist a owl:Class ;
+rdfs:label "Scientist"^^xsd:string .
+
+#A class for law or principles
+ns0:Law a owl:Class ;
+rdfs:label "Law"^^xsd:string .
+
+#class Country
+ns0:Country a owl:Class ;
+rdfs:label "Country"^^xsd:string .
+
+#class Discovery
+ns0:Discovery a owl:Class ;
+rdfs:label "Discovery"^^xsd:string .
+
+#class Force
+ns0:Force a owl:Class ;
+rdfs:label "Force"^^xsd:string .
+
+#CHAP2 units and measurements
+
+#class Unit
+ns0:Unit a owl:Class ;
+rdfs:label "Unit"^^xsd:string .
+
+#class Symbol
+ns0:Symbol a owl:Class ;
+rdfs:label "Symbol"^^xsd:string .
+
+#CHAP3 Motion
+
+#class Motion
+ns0:Motion a owl:Class ;
+rdfs:label "Motion"^^xsd:string .
+
+#class Kinematics
+ns0:Kinematics a owl:Class ;
+rdfs:label "Kinematics"^^xsd:string ;
+rdfs:subClassOf ns0:Motion .
+
+#class Quantity
+ns0:Quantity a owl:Class ;
+rdfs:label "Quantity"^^xsd:string .
+
+#class Vector
+ns0:Vector a owl:Class ;
+rdfs:label "Vector"^^xsd:string ;
+rdfs:subClassOf ns0:Quantity .
+
+#class Motion
+ns0:Motion a owl:Class ;
+rdfs:label "Motion"^^xsd:string .
+
+#class Application
+ns0:Application a owl:Class ;
+rdfs:label "Application"^^xsd:string .
+
+#class Constant
+ns0:Constant a owl:Class ;
+rdfs:label "Constant"^^xsd:string ;
+rdfs:subClassOf ns0:Quantity .
+
+#class Relative
+ns0:Relative a owl:Class ;
+rdfs:label "Relative"^^xsd:string ;
+rdfs:subClassOf ns0:Quantity, ns0:Motion .
+
+#class Formula
+ns0:Formula a owl:Class ;
+rdfs:label "Formula"^^xsd:string .
+
+#CHAP4 MOTION IN A PLANE
+
+#Scalar
+ns0:Scalar a owl:Class ;
+rdfs:label "Scalar"^^xsd:string ;
+rdfs:subClassOf ns0:Quantity.
+
+#VectorOperation
+ns0:VectorOperation a owl:Class ;
+rdfs:label "Vector Operation"^^xsd:string ;
+rdfs:subClassOf ns0:Vector.
+
+#---------------------------------- Individuals here ----------
+
+#individuals from CHAP1 INTRO
+
+
+#Individual Einstein
+#cn a stuff relates instance and class
+ns0:Einstein a owl:Thing, ns0:Scientist ;
+            ns0:has_discovered ns0:PhotoelectricEffect, ns0:TheoryOfRelativity ;
+            ns0:isFrom ns0:Germany ;
+            rdfs:label "Einstein"^^xsd:string .
+
+#Individual Archimedes
+#cn a stuff relates instance and class
+ns0:Archimedes a owl:Thing, ns0:Scientist ;
+            ns0:has_discovered ns0:PrinOfBouyancy, ns0:PrinOfLever ;
+            ns0:isFrom ns0:Greece ;
+            rdfs:label "Archimedes"^^xsd:string .
+
+#Individual Newton
+#cn a stuff relates instance and class
+ns0:Newton a owl:Thing, ns0:Scientist ;
+            ns0:has_discovered ns0:LawOfGravitaion, ns0:LawOfMotion, ns0:ReflectingTelescope ;
+            ns0:isFrom ns0:UK ;
+            rdfs:label "Isaac Newton"^^xsd:string .
+
+     #limiting the history part
+#individual discoveries
+
+ns0:PhotoelectricEffect a ns0:Discovery, ns0:Application ;
+rdfs:label "Photoelectric Effect"^^xsd:string .
+
+ns0:TheoryOfRelativity a ns0:Discovery, ns0:Law ;
+rdfs:label "Theory of Relativity"^^xsd:string .
+
+ns0:PrinOfBouyancy a ns0:Discovery, ns0:Law ;
+rdfs:label "Principle of Bouyancy"^^xsd:string .
+
+ns0:PrinOfLever a ns0:Discovery, ns0:Application, ns0:Law ;
+rdfs:label "Principle of lever"^^xsd:string .
+
+ns0:LawOfGravitaion a ns0:Discovery, ns0:Law ;
+rdfs:label "Law of Gravitation"^^xsd:string .
+
+ns0:LawOfMotion a ns0:Discovery, ns0:Law ;
+rdfs:label "Laws of Motion"^^xsd:string .
+
+ns0:ReflectingTelescope a ns0:Discovery, ns0:Application ;
+rdfs:label "Reflecting Telescope"^^xsd:string .
+
+
+#individuals of countries
+
+ns0:Germany a ns0:Country ;
+rdfs:label "Germany"^^xsd:string .
+
+ns0:Greece a ns0:Country ;
+rdfs:label "Greece"^^xsd:string .
+
+ns0:UK a ns0:Country ;
+rdfs:label "U.K."^^xsd:string .
+
+    #Forces
+
+#Individual Grav Force
+ns0:Gravitational a owl:Thing, ns0:Force ;
+            ns0:has_range "Infinite"^^xsd:string ;
+            rdfs:label "Gravitational Force"^^xsd:string .
+
+#individual EM Force
+ns0:ElectroMagnetic a owl:Thing, ns0:Force ;
+            ns0:has_range "Infinite"^^xsd:string ;
+            rdfs:label "Electro-Magnetic Force"^^xsd:string .
+
+#Individual Strong Nuclear
+ns0:StrongNuclear a owl:Thing, ns0:Force ;
+            ns0:has_range "Short"^^xsd:string ;
+            rdfs:label "Strong Nuclear Force"^^xsd:string .
+
+#Individuals Weak Nuclear
+ns0:WeakNuclear a owl:Thing, ns0:Force ;
+            ns0:has_range "Very Short"^^xsd:string ;
+            rdfs:label "Weak Nuclear Force"^^xsd:string .
+
+#other Forces
+ns0:Normal a owl:Thing, ns0:Force, ns0:Vector ;
+rdfs:label "Normal Force"^^xsd:string .
+
+ns0:Centrifugal a owl:Thing, ns0:Force, ns0:Vector ;
+rdfs:label "Centrifugal Force"^^xsd:string .
+
+ns0:Centripetal a owl:Thing, ns0:Force, ns0:Vector ;
+rdfs:label "Centripetal Force"^^xsd:string .
+
+#CHAP2 UNITS n ALL
+
+#meter wala instance
+ns0:Meter a owl:Thing, ns0:Unit, ns0:Quantity ;
+            ns0:denoted_by ns0:m ;
+            rdfs:label "Meter"^^xsd:string .
+
+ns0:Sec a owl:Thing, ns0:Unit, ns0:Quantity ;
+            ns0:denoted_by ns0:sec ;
+            rdfs:label "Seconds"^^xsd:string .
+
+ns0:Ampere a owl:Thing, ns0:Unit, ns0:Quantity ;
+            ns0:denoted_by ns0:A ;
+            rdfs:label "Ampere"^^xsd:string .
+
+ns0:Grams a owl:Thing, ns0:Unit, ns0:Quantity ;
+            ns0:denoted_by ns0:g ;
+            rdfs:label "grams"^^xsd:string .
+
+# unit symbols in short
+
+ns0:m a owl:Thing, ns0:Symbol ;
+rdfs:label "m"^^xsd:string .
+
+ns0:sec a owl:Thing, ns0:Symbol ;
+rdfs:label "sec"^^xsd:string .
+
+ns0:A a owl:Thing, ns0:Symbol ;
+rdfs:label "Amp"^^xsd:string .
+
+ns0:g a owl:Thing, ns0:Symbol ;
+rdfs:label "g"^^xsd:string .
+
+# types of motion
+
+#instance linear
+
+ns0:Linear a owl:Thing, ns0:Motion ;
+rdfs:label "Linear Motion"^^xsd:string .
+
+ns0:nonLinear a owl:Thing, ns0:Motion ;
+rdfs:label "Non-Linear Motion"^^xsd:string .
+
+ns0:Circular a owl:Thing, ns0:Motion ;
+ns0:has_application ns0:ConicalPendulum, ns0:RoadatABend ;
+ns0:has_formula ns0:AngularSpeed, ns0:CentripetalAccelaration ;
+rdfs:label "Circular Motion"^^xsd:string .
+
+ns0:AngularSpeed a owl:Thing, ns0:Quantity, ns0:Scalar ;
+ns0:has_unit "rad/sec"^^xsd:string ;
+rdfs:label "Angular Speed"^^xsd:string .
+
+ns0:CentripetalAccelaration a owl:Thing, ns0:Quantity, ns0:Vector ;
+ns0:has_unit "m/s^2"^^xsd:string ;
+rdfs:label "Centripetal Accelaration"^^xsd:string .
+
+ns0:Curvilinear a owl:Thing, ns0:Motion ;
+rdfs:label "Curvilinear Motion"^^xsd:string .
+
+ns0:HarmonicMotion a owl:Thing, ns0:Motion ;
+ns0:has_application ns0:SpringDamping, ns0:ElectricCircuits ;
+rdfs:label "Harmonic Motion"^^xsd:string .
+
+ns0:ProjectileMotion a owl:Thing, ns0:Motion ;
+ns0:has_application ns0:SpringDamping, ns0:ElectricCircuits ;
+ns0:has_formula ns0:timeOfMaxHeight, ns0:MaxHeight, ns0:HorizontalRange ;
+rdfs:label "Projectile Motion"^^xsd:string .
+
+ns0:timeOfMaxHeight a owl:Thing, ns0:Quantity ;
+ns0:has_unit ns0:sec ;
+rdfs:label "Time of max height"^^xsd:string .
+
+ns0:MaxHeight a owl:Thing, ns0:Quantity ;
+ns0:has_unit ns0:m ;
+rdfs:label "Max height"^^xsd:string .
+
+ns0:HorizontalRange a owl:Thing, ns0:Quantity ;
+ns0:has_unit ns0:m ;
+rdfs:label "Horizontal Range"^^xsd:string .
+
+#applications
+
+#ConicalPendulum
+ns0:ConicalPendulum a owl:Thing, ns0:Application ;
+ns0:has_formula ns0:LinearVelocity, ns0:AngularSpeed, ns0:Period, ns0:Frequency, ns0:TensionInString ;
+rdfs:label "Conical Pendulum"^^xsd:string .
+
+ns0:LinearVelocity a owl:Thing, ns0:Formula, ns0:Vector, ns0:Quantity ;
+rdfs:label "Linear Velocity"^^xsd:string .
+
+ns0:Period a owl:Thing, ns0:Formula, ns0:Scalar, ns0:Quantity ;
+ns0:has_unit ns0:sec ;
+rdfs:label "Period"^^xsd:string .
+
+ns0:Frequency a owl:Thing, ns0:Formula, ns0:Scalar, ns0:Quantity ;
+ns0:has_unit "sec^-1"^^xsd:string ;
+rdfs:label "Frequency"^^xsd:string .
+
+ns0:TensionInString a owl:Thing, ns0:Formula, ns0:Vector, ns0:Quantity, ns0:Force ;
+ns0:has_unit "N/m"^^xsd:string ;
+rdfs:label "Tension in the String"^^xsd:string .
+
+#Road at a bend
+ns0:RoadatABend a owl:Thing, ns0:Application ;
+ns0:has_formula ns0:Unbanked, ns0:Banked ;
+rdfs:label "Road at a Bend"^^xsd:string .
+
+ns0:Unbanked a owl:Thing, ns0:Formula ;
+rdfs:label "Unbanked"^^xsd:string .
+
+ns0:Banked a owl:Thing, ns0:Formula ;
+rdfs:label "Banked"^^xsd:string .
+
+#SpringDamping
+ns0:SpringDamping a owl:Thing, ns0:Application ;
+rdfs:label "Spring Damping"^^xsd:string .
+
+#ElectricCircuits
+ns0:ElectricCircuits a owl:Thing, ns0:Application ;
+rdfs:label "Electric Circuits"^^xsd:string .
+
+
+#vectors and quantities
+
+ns0:Velocity a owl:Thing, ns0:Vector, ns0:Quantity ;
+ns0:has_formula ns0:Average, ns0:Instantaneous ;
+ns0:has_operations ns0:Addition, ns0:Multiplication, ns0:Subtraction, ns0:Resolution ;
+ns0:has_unit "m/s^2"^^xsd:string ;
+rdfs:label "Velocity"^^xsd:string .
+
+ns0:Accelaration a owl:Thing, ns0:Vector, ns0:Quantity ;
+ns0:has_formula ns0:Average, ns0:Instantaneous ;
+ns0:has_operations ns0:Addition, ns0:Multiplication, ns0:Subtraction, ns0:Resolution ;
+ns0:has_unit "m/s^2"^^xsd:string ;
+rdfs:label "Accelaration"^^xsd:string .
+
+#Average
+ns0:Average a owl:Thing, ns0:Formula ;
+rdfs:label "Average"^^xsd:string .
+
+#Instantaneous
+ns0:Instantaneous a owl:Thing, ns0:Formula ;
+rdfs:label "Instantaneous"^^xsd:string .
+
+
+#CHAP4 Motion in a plane
+
+#Addition
+ns0:Addition a owl:Thing, ns0:VectorOperation ;
+rdfs:label "Addition"^^xsd:string .
+
+#Subtraction
+ns0:Subtraction a owl:Thing, ns0:VectorOperation ;
+rdfs:label "Subtraction"^^xsd:string .
+
+#Multiplication
+ns0:Multiplication a owl:Thing, ns0:VectorOperation ;
+rdfs:label "Multiplication"^^xsd:string .
+
+#Resolution
+ns0:Resolution a owl:Thing, ns0:VectorOperation ;
+rdfs:label "Resolution"^^xsd:string .
+
+
+#----------------------------------------Properties------------------
+
+#Datatype Property relates object to literals
+ns0:isFrom a owl:ObjectProperty ;
+rdfs:label "is from"^^xsd:string ;
+rdfs:domain ns0:Scientist ;
+rdfs:range ns0:Country.
+
+ns0:has_discovered a owl:ObjectProperty ;
+rdfs:label "has Discovered"^^xsd:string ;
+rdfs:domain ns0:Scientist ;
+rdfs:range ns0:Discovery, ns0:Law, ns0:Application .
+
+ns0:has_range a owl:DatatypeProperty ;
+rdfs:label "has Range"^^xsd:string ;
+rdfs:domain ns0:Force .
+#^has no range as pure Datatype properties are literals
+
+ns0:denoted_by a owl:DatatypeProperty ;
+rdfs:label "denoted by"^^xsd:string ;
+rdfs:domain ns0:Unit ;
+rdfs:range ns0:Symbol .
+
+ns0:has_application a owl:ObjectProperty ;
+rdfs:label "has application"^^xsd:string ;
+rdfs:domain ns0:Discovery, ns0:Law ;
+rdfs:range ns0:Application .
+
+ns0:has_formula a owl:ObjectProperty ;
+rdfs:label "has formula"^^xsd:string ;
+rdfs:domain ns0:Vector, ns0:Quantity ;
+rdfs:range ns0:Formula .
+
+ns0:has_operations a owl:ObjectProperty ;
+rdfs:label "has operation"^^xsd:string ;
+rdfs:domain ns0:Vector, ns0:Quantity, ns0:Scalar ;
+rdfs:range ns0:VectorOperation .
+
+ns0:has_unit a owl:DatatypeProperty ;
+rdfs:label "has unit"^^xsd:string ;
+rdfs:domain ns0:Quantity, ns0:Vector, ns0:Scalar ;
+rdfs:range ns0:Unit, ns0:Symbol .

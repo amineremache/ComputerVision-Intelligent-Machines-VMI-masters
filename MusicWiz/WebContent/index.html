@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en" ng-app="musicwizApp">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
+
+<!-- AngularJS library -->
+<script type="text/javascript" src="./lib/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js"></script>
+
+<!-- angular charts library-->
+<script type="text/javascript" src="./lib/angular-chart.js"></script>
+<script type="text/javascript" src="./lib/angular-chart.min.js"></script>
+
+<!--&lt;!&ndash; Angular plugin &ndash;&gt;-->
+<script src="http://ui-grid.info/release/ui-grid.js"></script>
+<link rel="stylesheet" href="http://ui-grid.info/release/ui-grid.css" type="text/css">
+<!--angular busy-->
+<script src="./lib/angular-busy.js"></script>
+<script src="./lib/angular-busy.min.js"></script>
+<!--<link rel="stylesheet" href="./lib/angular-busy.css" type="text/css">-->
+
+<!--<script src="./js/mainController.js"></script>-->
+
+<head>
+    <meta charset="utf-8">
+    <title>MusicWiz</title>
+    <!--<link rel="stylesheet" href="css/app.css"/>-->
+</head>
+
+<style type="text/css">
+    .myGrid {
+        width: 800px;
+        height: 400px;
+    }
+html,
+body {
+   margin:0;
+   padding:0;
+   height:100%;
+}
+#footer {
+   position:fixed;
+   bottom:0px;
+   width:100%;
+   height:30px;   /* Height of the footer */
+   background:#337ab7;
+}
+.panel-primary {
+     border-color: #6cf;
+}
+.row {
+    padding-left: 175px;
+    padding-right: 175px;
+}
+    .container {
+        width: 100%;
+        align-content: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #first {
+        width: 50%;
+        float: left;
+    }
+    #second {
+        width: 50%;
+        float: right;
+    }
+</style>
+
+<body>
+<div class="panel panel-primary">
+    <div class="panel-heading" align="center">
+        <h2 class="">MusicWiz</h2>
+        <h3>An RDF based music search engine.</h3>
+    </div>
+</div>
+
+<div ng-controller="searchResultController" >
+    <div style="padding: 20px 100px 50px 100px;" align="center">
+        <div class="search">
+            <div class="col-lg-8 col-lg-offset-2">
+                <form role="form">
+                    <div class="input-group">
+                        <input type="text" class="form-control input-lg" ng-model="searchQuery" placeholder="Search">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default btn-lg" type="submit" ng-click="runQuery()">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                  </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div align="center" ng-hide="hideGrid">
+        <div id="grid1" ui-grid="{ data: myData }" class="myGrid" style="width: 900px"></div>
+    </div>
+</div>
+
+<div >
+    <div ng-switch="selectedGraph" style="padding: 30px 0px 0px 0px; width: 60%; margin-left: auto; margin-right: auto;" align="center" ng-controller="graphController" ng-init="init">
+        <div class="container" align="center">
+            <div id="first" style="width: 300px">
+                <div align="center">
+                    Select Query:
+                </div>
+                <br>
+                <div class="dropdown">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        {{selectedQuery}}
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <li ng-repeat="a in query_items">
+                            <a ng-click="queryItemSelected(a)">
+                                {{a}}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="second" style="width: 300px">
+                <div align="center">
+                    Select Chart Type:
+                </div>
+                <br>
+                <div class="dropdown">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        {{selectedGraph}}
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                        <li ng-repeat="a in graph_items">
+                            <a ng-click="graphItemSelected(a)">
+                                {{a}}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="animate-switch" ng-switch-when="Bar Chart">
+            <!--<div class="col-lg-8">-->
+            <div align="center">
+                <canvas id="bar" class="chart chart-bar" height="180px"
+                        chart-data="graph_data" chart-labels="graph_labels">
+                </canvas>
+            </div>
+                <br>
+        </div>
+
+
+        <div class="animate-switch" ng-switch-when="Pie Chart">
+            <!--<div class="border col-lg-6">-->
+                <div align="center">
+                    <canvas id="pie" class="chart chart-pie" height="100px"
+                            chart-data="graph_data" chart-labels="graph_labels">
+                    </canvas>
+                </div>
+                <br>
+            <!--</div>-->
+        </div>
+        <div class="animate-switch" ng-switch-when="Line Chart">
+            <!--<div class="border col-lg-6">-->
+                <div align="center">
+                    <canvas id="line" class="chart chart-line" height="180px"
+                            chart-data="graph_data" chart-labels="graph_labels">
+                    </canvas>
+                </div>
+                <br>
+            <!--</div>-->
+        </div>
+    </div>
+</div>
+
+<div align="center" ng-controller="searchResultController">
+    <button busy="Processing ..." type="button" class="btn btn-primary" ng-click="fetchTotalRows()">Get Number of Triples</button>
+    <br>
+    <br>
+    <div style="font-weight: bold;">
+        {{totalRows}}
+    </div>
+</div>
+
+<br>
+<br>
+<br>
+
+<div>
+   <div id="footer" align="center" style="color:#FFF">
+       <h6>Group 10 - Apache Jena - Advanced Databases</h6>
+   </div>
+</div>
+
+<script src="js/searchResultController.js"></script>
+<script src="js/graphController.js"></script>
+</body>
+</html>

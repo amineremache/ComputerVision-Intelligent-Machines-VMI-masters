@@ -1,0 +1,1483 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/maraisch/ontologies/2015/10/untitled-ontology-5#"
+     xml:base="http://www.semanticweb.org/maraisch/ontologies/2015/10/untitled-ontology-5"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:musicontology="http://www.semanticweb.org/NassimKouache/ontologies/2018/musicontology#"
+     xmlns:musicontology1="http://www.semanticweb.org/RAHEM-BENNANI/ontologies/2018/musicontology#"
+     xmlns:musicontology2="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#"
+     xmlns:untitled-ontology-5="http://www.semanticweb.org/maraisch/ontologies/2015/10/untitled-ontology-5#"
+     xmlns:untitled-ontology-52="http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology">
+        <description xml:lang="fr">Projet d&apos;onthologie de la musique</description>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#creator -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#creator">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#description -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#description"/>
+    
+
+
+    <!-- http://www.semanticweb.org/maraisch/ontologies/2015/10/untitled-ontology-5#description -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/maraisch/ontologies/2015/10/untitled-ontology-5#description"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#label -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#label">
+        <rdfs:label></rdfs:label>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#aPourArtiste -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#aPourArtiste">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#estArtisteDe"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Chanson"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Artiste"/>
+        <rdfs:comment xml:lang="fr">aPourArtiste est la relation entre l&apos;artiste et la chanson. C&apos;est une relation mère pour les relations estComposePar, estCreePar et estInterpretePar.</rdfs:comment>
+        <rdfs:label xml:lang="fr">a pour artiste</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#aPourGenre -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#aPourGenre">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#estGenreDe"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Chanson"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Genre"/>
+        <rdfs:comment xml:lang="fr">aPourGenre est la relation entre le genre et la chanson.</rdfs:comment>
+        <rdfs:label xml:lang="fr">a pour genre</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#aPourGroupe -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#aPourGroupe">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#estGroupeDe"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Chanson"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Groupe"/>
+        <rdfs:comment xml:lang="fr">aPourGroupe est la relation entre le groupe et la chanson. C&apos;est une relation mère pour les relations aPourGroupeAuteur, aPourGroupeCompositeur et aPourGroupeInterprete.</rdfs:comment>
+        <rdfs:label xml:lang="fr">a pour groupe</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#aPourMembre -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#aPourMembre">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#estMembreDe"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Groupe"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Artiste"/>
+        <rdfs:comment xml:lang="fr">aPourMembre est une relation entre le groupe et l&apos;artiste.</rdfs:comment>
+        <rdfs:label xml:lang="fr">a pour membre</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#aPourSousGenre -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#aPourSousGenre">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#estSousGenreDe"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Genre"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Sous-Genre"/>
+        <rdfs:comment xml:lang="fr">aPourSousGenre est une relation entre le genre et le sous-genre.</rdfs:comment>
+        <rdfs:label xml:lang="fr">a pour sous-genre</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#appartient -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#appartient">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#contient"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Chanson"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Album"/>
+        <rdfs:comment xml:lang="fr">appartient est une relation entre l&apos;album et la chanson.</rdfs:comment>
+        <rdfs:label xml:lang="fr">appartient</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#compose -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#compose">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#estArtisteDe"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#aPourArtiste"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#estComposePar"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Compositeur"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Chanson"/>
+        <rdfs:comment xml:lang="fr">compose est la relation entre le compositeur et la chanson.</rdfs:comment>
+        <rdfs:label xml:lang="fr">compose</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#contient -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#contient">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Album"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Chanson"/>
+        <rdfs:comment xml:lang="fr">contient est une relation entre l&apos;album et la chanson.</rdfs:comment>
+        <rdfs:label xml:lang="fr">contient</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#cree -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#cree">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#estArtisteDe"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#aPourArtiste"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#estCreePar"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Auteur"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Chanson"/>
+        <rdfs:comment xml:lang="fr">cree est la relation entre l&apos;auteur et la chanson.</rdfs:comment>
+        <rdfs:label xml:lang="fr">crée</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#estArtisteDe -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#estArtisteDe">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Artiste"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Chanson"/>
+        <rdfs:comment xml:lang="fr">estArtisteDe est la relation l&apos;artiste et la chanson.</rdfs:comment>
+        <rdfs:label xml:lang="fr">est artiste de</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#estComposePar -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#estComposePar">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#aPourArtiste"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#estArtisteDe"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Chanson"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Compositeur"/>
+        <rdfs:comment xml:lang="fr">estComposePar est la relation entre le compositeur et la chanson.</rdfs:comment>
+        <rdfs:label xml:lang="fr">est composé par</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#estCreePar -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#estCreePar">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#aPourArtiste"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#estArtisteDe"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Chanson"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Auteur"/>
+        <rdfs:comment xml:lang="fr">estCreePar est la relation entre l&apos;auteur et la chanson.</rdfs:comment>
+        <rdfs:label xml:lang="fr">est créé par</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#estGenreDe -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#estGenreDe">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Genre"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Chanson"/>
+        <rdfs:comment xml:lang="fr">estGenreDe est la relation entre la chanson et le genre.</rdfs:comment>
+        <rdfs:label xml:lang="fr">est genre de</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#estGroupeDe -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#estGroupeDe">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Groupe"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Chanson"/>
+        <rdfs:comment xml:lang="fr">estGroupeDe est la relation entre le groupe et la chanson. C&apos;est une relation mère pour les relations estGroupeAuteurDe, estGroupeCompositeurDe et estGroupeInterpreteDe.</rdfs:comment>
+        <rdfs:label xml:lang="fr">est groupe de</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#estInterpretePar -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#estInterpretePar">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#aPourArtiste"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#estArtisteDe"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#interprete"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Chanson"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Interprète"/>
+        <rdfs:comment xml:lang="fr">estInterpretePar est la relation entre l&apos;interprète et la chanson.</rdfs:comment>
+        <rdfs:label xml:lang="fr">est interprété par</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#estMembreDe -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#estMembreDe">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Artiste"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Groupe"/>
+        <rdfs:comment xml:lang="fr">aPourMembreDe est la relation entre le groupe et l&apos;artiste.</rdfs:comment>
+        <rdfs:label xml:lang="fr">est membre de</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#estRepresenteeDans -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#estRepresenteeDans">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#joue"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Chanson"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Fichier"/>
+        <rdfs:comment xml:lang="fr">estRepresenteeDans est la relation entre la chanson et le fichier.</rdfs:comment>
+        <rdfs:label xml:lang="fr">est représentée dans</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#estSousGenreDe -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#estSousGenreDe">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Sous-Genre"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Genre"/>
+        <rdfs:comment xml:lang="fr">estSousGenreDe est la relation entre le genre et le sous-genre.</rdfs:comment>
+        <rdfs:label xml:lang="fr">est sous-genre de</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#interprete -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#interprete">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#estArtisteDe"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#aPourArtiste"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Interprète"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Chanson"/>
+        <rdfs:comment xml:lang="fr">interprete est la relation entre l&apos;interprète et la chanson.</rdfs:comment>
+        <rdfs:label xml:lang="fr">interprete</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#joue -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#joue">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Fichier"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Chanson"/>
+        <rdfs:comment xml:lang="fr">joue est la relation entre le fichier et la chanson.</rdfs:comment>
+        <rdfs:label xml:lang="fr">joue</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#aPourAnneeApparitionAlbum -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#aPourAnneeApparitionAlbum">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Album"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="fr">année d&apos;apparition d&apos;un album</rdfs:comment>
+        <rdfs:label xml:lang="fr">année album</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#aPourAnneeApparitionChanson -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#aPourAnneeApparitionChanson">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Chanson"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="fr">année d&apos;apparition d&apos;une chanson</rdfs:comment>
+        <rdfs:label xml:lang="fr">année chanson</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#aPourDateDeNaissance -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#aPourDateDeNaissance">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Artiste"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="fr">date de naissance de l&apos;artiste</rdfs:comment>
+        <rdfs:label xml:lang="fr">naissance</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#aPourDuree -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#aPourDuree">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Chanson"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="fr">durée d&apos;une chanson</rdfs:comment>
+        <rdfs:label xml:lang="fr">durée</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#aPourNationalite -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#aPourNationalite">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Artiste"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="fr">nationalité de l&apos;artiste</rdfs:comment>
+        <rdfs:label xml:lang="fr">nationalité</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#aPourNomAlbum -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#aPourNomAlbum">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Album"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="fr">nom de l&apos;album</rdfs:comment>
+        <rdfs:label xml:lang="fr">nom album</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#aPourNomArtiste -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#aPourNomArtiste">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Artiste"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="fr">nom de l&apos;artiste</rdfs:comment>
+        <rdfs:label xml:lang="fr">nom artiste</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#aPourNomGenre -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#aPourNomGenre">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Genre"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="fr">nom du genre</rdfs:comment>
+        <rdfs:label xml:lang="fr">nom genre</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#aPourNomGroupe -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#aPourNomGroupe">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Groupe"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="fr">nom du groupe</rdfs:comment>
+        <rdfs:label xml:lang="fr">nom groupe</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#aPourNomSousGenre -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#aPourNomSousGenre">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Sous-Genre"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="fr">nom du sous-genre</rdfs:comment>
+        <rdfs:label xml:lang="fr">nom sous genre</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#aPourNumeroChanson -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#aPourNumeroChanson">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Album"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="fr">numero d&apos;une chanson</rdfs:comment>
+        <rdfs:label xml:lang="fr">numero chanson</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#aPourPrenom -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#aPourPrenom">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Artiste"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="fr">prénom de l&apos;artiste</rdfs:comment>
+        <rdfs:label xml:lang="fr">prenom</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#aPourTitre -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#aPourTitre">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Chanson"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="fr">titre d&apos;une chanson</rdfs:comment>
+        <rdfs:label xml:lang="fr">titre</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#aPourURL -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#aPourURL">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Fichier"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="fr">URL de la chanson</rdfs:comment>
+        <rdfs:label xml:lang="fr">url</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#aPourVente -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#aPourVente">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Album"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="fr">nombre de vente d&apos;un album</rdfs:comment>
+        <rdfs:label xml:lang="fr">vente</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Album -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Album">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#contient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Chanson"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Artiste"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Chanson"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Fichier"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Genre"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Groupe"/>
+        <rdfs:comment xml:lang="fr">Un album est un ensemble de divers titres d&apos;un artiste présentés sous forme de disque.</rdfs:comment>
+        <rdfs:label xml:lang="fr">album</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Artiste -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Artiste">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#estArtisteDe"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Chanson"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#estMembreDe"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Groupe"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Chanson"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Fichier"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Genre"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Groupe"/>
+        <rdfs:comment xml:lang="fr">Un artiste est une personne qui crée une œuvre, ici la musique. Un artiste peut être un auteur, un compositeur ou un interprète.</rdfs:comment>
+        <rdfs:label xml:lang="fr">artiste</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Auteur -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Auteur">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Artiste"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#cree"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Chanson"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Artiste"/>
+        <rdfs:comment xml:lang="fr">Un auteur d&apos;une chanson est la personne qui crée les paroles de celle-ci.</rdfs:comment>
+        <rdfs:label xml:lang="fr">auteur</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Chanson -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Chanson">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#aPourArtiste"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Artiste"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#aPourGenre"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Genre"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#aPourGroupe"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Groupe"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#appartient"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Album"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#estComposePar"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Compositeur"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#estCreePar"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Auteur"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#estInterpretePar"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Interprète"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#estRepresenteeDans"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Fichier"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Fichier"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Genre"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Groupe"/>
+        <rdfs:comment xml:lang="fr">Une chanson est une composition musicale contenant du texte et une mélodie.</rdfs:comment>
+        <rdfs:label xml:lang="fr">chanson</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Compositeur -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Compositeur">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Artiste"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#compose"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Chanson"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Artiste"/>
+        <rdfs:comment xml:lang="fr">Un compositeur de musique est un musicien qui réalise de la musique.</rdfs:comment>
+        <rdfs:label xml:lang="fr">compositeur</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Disque_diamant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Disque_diamant">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Album"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#aPourVente"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">500000</xsd:minInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Album"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Disque_double_platine"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Disque_or"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Disque_platine"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Disque_triple_platine"/>
+        <musicontology2:creator xml:lang="fr">Un disque diamant est un album dont nombre d&apos;exemplaires vendus est 500000 exemplaires.</musicontology2:creator>
+        <rdfs:label xml:lang="fr">disque diamant</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Disque_double_platine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Disque_double_platine">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Album"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#aPourVente"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200000</xsd:minInclusive>
+                                    </rdf:Description>
+                                    <rdf:Description>
+                                        <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">300000</xsd:maxExclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Album"/>
+        <rdfs:comment xml:lang="fr">Un disque double platine est un album dont les ventes sonr entre 200000 et 300000.</rdfs:comment>
+        <rdfs:label xml:lang="fr">disque double platine</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Disque_or -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Disque_or">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Album"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#aPourVente"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50000</xsd:minInclusive>
+                                    </rdf:Description>
+                                    <rdf:Description>
+                                        <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100000</xsd:maxExclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Album"/>
+        <rdfs:comment xml:lang="fr">Un disque d&apos;or est un album dont les ventes sont entre 50000 et 100000.</rdfs:comment>
+        <rdfs:label xml:lang="fr">disque d&apos;or</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Disque_platine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Disque_platine">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Album"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#aPourVente"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100000</xsd:minInclusive>
+                                    </rdf:Description>
+                                    <rdf:Description>
+                                        <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200000</xsd:maxExclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Album"/>
+        <rdfs:comment xml:lang="fr">Un disque platine est un album dont entre 100000 et 200000 exemplaires vendus.</rdfs:comment>
+        <rdfs:label xml:lang="fr">disque platine</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Disque_triple_platine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Disque_triple_platine">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Album"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#aPourVente"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">300000</xsd:minInclusive>
+                                    </rdf:Description>
+                                    <rdf:Description>
+                                        <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">500000</xsd:maxExclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Album"/>
+        <rdfs:comment xml:lang="fr">Un disque triple platine est un album dont entre 300000 et 500000 exemplaires vendus.</rdfs:comment>
+        <rdfs:label xml:lang="fr">disque triple platine</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Fichier -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Fichier">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#joue"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Chanson"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Genre"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Groupe"/>
+        <rdfs:comment xml:lang="fr">Un fichier contient l&apos;url pour stocker la chanson.</rdfs:comment>
+        <rdfs:label xml:lang="fr">fichier</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Genre -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Genre">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#aPourSousGenre"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Sous-Genre"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#estGenreDe"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Chanson"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Groupe"/>
+        <rdfs:comment xml:lang="fr">Le genre musical caractérise le type/style de la musique. Il existe un grand nombre de genres différents.</rdfs:comment>
+        <rdfs:label xml:lang="fr">genre</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Groupe -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Groupe">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#estGroupeDe"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Chanson"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#aPourMembre"/>
+                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Artiste"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment xml:lang="fr">Un groupe est un ensemble d&apos;artistes, dans notre cas des artistes de musique.</rdfs:comment>
+        <rdfs:label xml:lang="fr">groupe</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Interprète -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Interprète">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Artiste"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#interprete"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Chanson"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Artiste"/>
+        <rdfs:comment xml:lang="fr">Un interprète est un musicien qui réalise les idées d&apos;un compositeur.</rdfs:comment>
+        <rdfs:label xml:lang="fr">interprete</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Sous-Genre -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Sous-Genre">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Genre"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#estSousGenreDe"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Genre"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Genre"/>
+        <rdfs:comment xml:lang="fr">Un sous-genre est une sous-catégorie de genre. Il définit plus précisement le genre.</rdfs:comment>
+        <rdfs:label xml:lang="fr">sous-genre</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Adele -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Adele">
+        <rdf:type rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Artiste"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Auteur"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Compositeur"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Interprète"/>
+        <musicontology2:compose rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Hello"/>
+        <musicontology2:cree rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Hello"/>
+        <musicontology2:estArtisteDe rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Hello"/>
+        <musicontology2:interprete rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Hello"/>
+        <musicontology2:aPourDateDeNaissance>5 mai 1988</musicontology2:aPourDateDeNaissance>
+        <musicontology2:aPourNationalite>anglaise</musicontology2:aPourNationalite>
+        <musicontology2:aPourNomArtiste>Adele</musicontology2:aPourNomArtiste>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Aerosmith -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Aerosmith">
+        <rdf:type rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Groupe"/>
+        <musicontology2:aPourMembre rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Joe_Perry"/>
+        <musicontology2:aPourMembre rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Joey_Kramer"/>
+        <musicontology2:aPourMembre rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Steven_Tyler"/>
+        <musicontology2:aPourMembre rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Tom_Hamilton"/>
+        <musicontology2:estGroupeDe rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Angel"/>
+        <musicontology2:estGroupeDe rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Jaded"/>
+        <musicontology2:estGroupeDe rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Cryin&apos;"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Angel -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Angel">
+        <rdf:type rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Chanson"/>
+        <musicontology2:aPourArtiste rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Joe_Perry"/>
+        <musicontology2:aPourArtiste rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Joey_Kramer"/>
+        <musicontology2:aPourArtiste rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Steven_Tyler"/>
+        <musicontology2:aPourArtiste rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Tom_Hamilton"/>
+        <musicontology2:aPourGenre rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Rock"/>
+        <musicontology2:aPourGroupe rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Aerosmith"/>
+        <musicontology2:appartient rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Nine_Lives"/>
+        <musicontology2:estComposePar rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Joey_Kramer"/>
+        <musicontology2:estComposePar rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Tom_Hamilton"/>
+        <musicontology2:estCreePar rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Joe_Perry"/>
+        <musicontology2:estInterpretePar rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Steven_Tyler"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Avicii -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Avicii">
+        <rdf:type rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Compositeur"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Bad -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Bad">
+        <rdf:type rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Disque_triple_platine"/>
+        <musicontology2:contient rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Beat_it"/>
+        <musicontology2:aPourAnneeApparitionAlbum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1987</musicontology2:aPourAnneeApparitionAlbum>
+        <musicontology2:aPourVente rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">499999</musicontology2:aPourVente>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Beat_it -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Beat_it">
+        <musicontology2:aPourArtiste rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Michael_Jackson"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Classique -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Classique">
+        <rdf:type rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Country -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Country">
+        <rdf:type rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Get_a_Grip -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Get_a_Grip">
+        <rdf:type rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Album"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Disque_or"/>
+        <musicontology2:contient rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Jaded"/>
+        <musicontology2:aPourVente rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">55000</musicontology2:aPourVente>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Hard_Rock -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Hard_Rock">
+        <rdf:type rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Sous-Genre"/>
+        <musicontology2:estSousGenreDe rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Rock"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Hello -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Hello">
+        <rdf:type rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Chanson"/>
+        <musicontology2:aPourArtiste rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Adele"/>
+        <musicontology2:aPourGenre rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Pop"/>
+        <musicontology2:appartient rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#25"/>
+        <musicontology2:estComposePar rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Adele"/>
+        <musicontology2:estCreePar rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Adele"/>
+        <musicontology2:estInterpretePar rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Adele"/>
+        <musicontology2:estRepresenteeDans rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#fichier_Hello"/>
+        <musicontology2:aPourAnneeApparitionChanson rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2015</musicontology2:aPourAnneeApparitionChanson>
+        <musicontology2:aPourDuree rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</musicontology2:aPourDuree>
+        <musicontology2:aPourTitre>Hello</musicontology2:aPourTitre>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Jaded -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Jaded">
+        <rdf:type rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Chanson"/>
+        <musicontology2:aPourArtiste rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Joe_Perry"/>
+        <musicontology2:aPourArtiste rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Steven_Tyler"/>
+        <musicontology2:aPourArtiste rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Tom_Hamilton"/>
+        <musicontology2:aPourGenre rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Rock"/>
+        <musicontology2:aPourGroupe rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Aerosmith"/>
+        <musicontology2:appartient rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Get_a_Grip"/>
+        <musicontology2:appartient rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Pump"/>
+        <musicontology2:estComposePar rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Joey_Kramer"/>
+        <musicontology2:estComposePar rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Tom_Hamilton"/>
+        <musicontology2:estCreePar rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Joe_Perry"/>
+        <musicontology2:estInterpretePar rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Steven_Tyler"/>
+        <musicontology2:estRepresenteeDans rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#fichier_jaded"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Joe_Perry -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Joe_Perry">
+        <rdf:type rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Artiste"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Auteur"/>
+        <musicontology2:cree rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Angel"/>
+        <musicontology2:cree rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Jaded"/>
+        <musicontology2:cree rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Cryin&apos;"/>
+        <musicontology2:estArtisteDe rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Angel"/>
+        <musicontology2:estArtisteDe rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Jaded"/>
+        <musicontology2:estArtisteDe rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Cryin&apos;"/>
+        <musicontology2:estMembreDe rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Aerosmith"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Joey_Kramer -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Joey_Kramer">
+        <rdf:type rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Artiste"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Compositeur"/>
+        <musicontology2:compose rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Angel"/>
+        <musicontology2:compose rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Jaded"/>
+        <musicontology2:compose rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Cryin&apos;"/>
+        <musicontology2:estArtisteDe rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Angel"/>
+        <musicontology2:estArtisteDe rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Jaded"/>
+        <musicontology2:estArtisteDe rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Cryin&apos;"/>
+        <musicontology2:estMembreDe rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Aerosmith"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Kalimba -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Kalimba">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Artiste"/>
+            </owl:Restriction>
+        </rdf:type>
+        <musicontology2:estArtisteDe rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Hello"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Levels -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Levels">
+        <rdf:type rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Chanson"/>
+        <musicontology2:aPourArtiste rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Avicii"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Metal_electronique -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Metal_electronique">
+        <rdf:type rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Sous-Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Michael_Jackson -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Michael_Jackson">
+        <rdf:type rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Artiste"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Interprète"/>
+        <musicontology2:estArtisteDe rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Beat_it"/>
+        <musicontology2:interprete rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Beat_it"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Nine_Lives -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Nine_Lives">
+        <rdf:type rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Album"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Disque_triple_platine"/>
+        <musicontology2:contient rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Angel"/>
+        <musicontology2:aPourVente rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">450000</musicontology2:aPourVente>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Pop -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Pop">
+        <rdf:type rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Genre"/>
+        <musicontology2:estGenreDe rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Hello"/>
+        <musicontology2:estGenreDe rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Waka_waka"/>
+        <musicontology2:aPourNomGenre>Pop</musicontology2:aPourNomGenre>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Pump -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Pump">
+        <rdf:type rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Album"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Disque_double_platine"/>
+        <musicontology2:contient rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Jaded"/>
+        <musicontology2:aPourVente rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">250000</musicontology2:aPourVente>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Rock -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Rock">
+        <rdf:type rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Genre"/>
+        <musicontology2:aPourSousGenre rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Hard_Rock"/>
+        <musicontology2:estGenreDe rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Angel"/>
+        <musicontology2:estGenreDe rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Jaded"/>
+        <musicontology2:estGenreDe rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Cryin&apos;"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Sale_el_sol -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Sale_el_sol">
+        <rdf:type rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Album"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Disque_diamant"/>
+        <musicontology2:contient rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Waka_waka"/>
+        <musicontology2:aPourAnneeApparitionAlbum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2010</musicontology2:aPourAnneeApparitionAlbum>
+        <musicontology2:aPourVente rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100000000</musicontology2:aPourVente>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Shakira -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Shakira">
+        <rdf:type rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Artiste"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Interprète"/>
+        <musicontology2:estArtisteDe rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Waka_waka"/>
+        <musicontology2:interprete rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Waka_waka"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Smooth_Criminal -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Smooth_Criminal">
+        <musicontology2:aPourArtiste rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Michael_Jackson"/>
+        <musicontology2:aPourGenre rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Pop"/>
+        <musicontology2:appartient rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Bad"/>
+        <musicontology2:estInterpretePar rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Michael_Jackson"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Steven_Tyler -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Steven_Tyler">
+        <rdf:type rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Artiste"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Interprète"/>
+        <musicontology2:estArtisteDe rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Angel"/>
+        <musicontology2:estArtisteDe rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Jaded"/>
+        <musicontology2:estArtisteDe rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Cryin&apos;"/>
+        <musicontology2:estMembreDe rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Aerosmith"/>
+        <musicontology2:interprete rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Angel"/>
+        <musicontology2:interprete rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Jaded"/>
+        <musicontology2:interprete rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Cryin&apos;"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Tom_Hamilton -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Tom_Hamilton">
+        <rdf:type rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Artiste"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Compositeur"/>
+        <musicontology2:compose rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Angel"/>
+        <musicontology2:compose rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Jaded"/>
+        <musicontology2:compose rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Cryin&apos;"/>
+        <musicontology2:estArtisteDe rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Angel"/>
+        <musicontology2:estArtisteDe rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Jaded"/>
+        <musicontology2:estArtisteDe rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Cryin&apos;"/>
+        <musicontology2:estMembreDe rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Aerosmith"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Waka_waka -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Waka_waka">
+        <rdf:type rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Chanson"/>
+        <musicontology2:aPourArtiste rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Shakira"/>
+        <musicontology2:aPourGenre rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Pop"/>
+        <musicontology2:appartient rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Sale_el_sol"/>
+        <musicontology2:estInterpretePar rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Shakira"/>
+        <musicontology2:estRepresenteeDans rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#fichier_waka_waka"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#fichier_Hello -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#fichier_Hello">
+        <rdf:type rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Fichier"/>
+        <musicontology2:joue rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Hello"/>
+        <musicontology2:aPourURL>www.adele.com</musicontology2:aPourURL>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#fichier_jaded -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#fichier_jaded">
+        <rdf:type rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Fichier"/>
+        <musicontology2:joue rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Jaded"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#fichier_waka_waka -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#fichier_waka_waka">
+        <rdf:type rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Fichier"/>
+        <musicontology2:joue rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Waka_waka"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#25 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#25">
+        <rdf:type rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Album"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Disque_diamant"/>
+        <musicontology2:contient rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Hello"/>
+        <musicontology2:aPourAnneeApparitionAlbum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2015</musicontology2:aPourAnneeApparitionAlbum>
+        <musicontology2:aPourNomAlbum>adele_25</musicontology2:aPourNomAlbum>
+        <musicontology2:aPourNumeroChanson rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</musicontology2:aPourNumeroChanson>
+        <musicontology2:aPourVente rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1000000</musicontology2:aPourVente>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Cryin&apos; -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Cryin&apos;">
+        <rdf:type rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Chanson"/>
+        <musicontology2:aPourGroupe rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Aerosmith"/>
+        <musicontology2:appartient rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Music_from_Another_Dimension!"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Music_from_Another_Dimension! -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Music_from_Another_Dimension!">
+        <rdf:type rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Album"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Disque_platine"/>
+        <musicontology2:contient rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Cryin&apos;"/>
+        <musicontology2:aPourVente rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">150000</musicontology2:aPourVente>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#Blues -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2004/02/skos/core#Blues">
+        <rdf:type rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#Electronique -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2004/02/skos/core#Electronique">
+        <rdf:type rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#Experimental -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2004/02/skos/core#Experimental">
+        <rdf:type rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#Folk -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2004/02/skos/core#Folk">
+        <rdf:type rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#Hip_Hop -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2004/02/skos/core#Hip_Hop">
+        <rdf:type rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#Instrumental -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2004/02/skos/core#Instrumental">
+        <rdf:type rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#International -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2004/02/skos/core#International">
+        <rdf:type rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#Jazz -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2004/02/skos/core#Jazz">
+        <rdf:type rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#Novelty -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2004/02/skos/core#Novelty">
+        <rdf:type rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#Old_Time -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2004/02/skos/core#Old_Time">
+        <rdf:type rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#Soul_RnB -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2004/02/skos/core#Soul_RnB">
+        <rdf:type rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#Spoken -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2004/02/skos/core#Spoken">
+        <rdf:type rdf:resource="http://www.semanticweb.org/NOM/ontologies/2018/musicontology#Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#priorVersion">
+        <musicontology2:description></musicontology2:description>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

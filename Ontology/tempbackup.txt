@@ -1,0 +1,75 @@
+from google import search
+import wikipedia
+import os
+import codecs
+import sys
+
+
+
+#get the expansion file first:
+
+#operations on the originals file:
+
+foo = open("original.txt", 'r')
+
+try:
+    if os.stat("original.txt").st_size != 0:
+       original = foo.read().split(" ")
+       res = "something"
+    else:
+       res = "No results found!"
+except OSError:
+    res = "Expansion file missing!"
+
+
+
+
+#OPERATION ON EXPANSION FILE
+f = open("expansion.txt", 'r')
+res = "No results found!"
+
+try:
+    if os.stat("expansion.txt").st_size != 0:
+       word = f.read().split(") or (")
+       res = "something"
+    else:
+       res = "No results found!"
+except OSError:
+    res = "Expansion file missing!"
+
+
+mylist = []
+
+for w in word:
+      # remove some minor errors
+      w = w.replace(")", "")
+      w = w.replace("(", "")
+      sub = w.split(" and ")
+      for s in sub:
+              mylist.append(s)
+
+
+#--------------------------------------------------------------------------
+mylist = list(set(mylist))
+print(mylist)
+
+result = []
+
+file = codecs.open("example.txt", "ab+", "utf-8")
+
+
+for w in mylist:
+        try:
+
+                article = wikipedia.summary(w, sentences=5, redirect=True, auto_suggest=True)
+                file.write("<h2>"+w+"</h2><br><p>"+article+"</p>")
+                file.write("<br>\n")
+
+                # if any(x in article for x in original):
+                #     file.write("<h2>"+w+"</h2><br><p>"+article+"</p>")
+                #     file.write("<br>\n")
+
+        except:
+                pass
+
+open("original.txt", 'w').close()

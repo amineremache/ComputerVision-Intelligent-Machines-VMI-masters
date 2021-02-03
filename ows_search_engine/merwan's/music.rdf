@@ -1,0 +1,1308 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#"
+     xml:base="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/music-ontology">
+        <rdfs:comment xml:lang="fr">Projet d&apos;Ontologie et Web Semantique à propos de la musique</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#creator -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#creator">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#description -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#description"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#label -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#label">
+        <rdfs:label></rdfs:label>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#aPourArtiste -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#aPourArtiste">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#estArtisteDe"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Chanson"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Artiste"/>
+        <rdfs:comment xml:lang="fr">aPourArtiste est la relation entre Chanson et Artiste. C&apos;est la relation mère des relations aPourAuteur, aPourCompositeur et aPourInterprete</rdfs:comment>
+        <rdfs:label xml:lang="fr">aPourArtiste</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#aPourAuteur -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#aPourAuteur">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#aPourArtiste"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#estArtisteDe"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#estAuteurDe"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Chanson"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Auteur"/>
+        <rdfs:comment xml:lang="fr">aPourAuteur est la relation entre Chanson et Auteur</rdfs:comment>
+        <rdfs:label xml:lang="fr">aPourAuteur</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#aPourCompositeur -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#aPourCompositeur">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#aPourArtiste"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#estArtisteDe"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#estCompositeurDe"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Chanson"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Compositeur"/>
+        <rdfs:comment xml:lang="fr">aPourCompositeur est la relation entre Chanson et Compositeur</rdfs:comment>
+        <rdfs:label xml:lang="fr">aPourCompositeur</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#aPourGenreMusical -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#aPourGenreMusical">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#estGenreMusicalDe"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Chanson"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#GenreMusical"/>
+        <rdfs:comment xml:lang="fr">aPourGenreMusical est la relation entre Chanson et GenreMusical</rdfs:comment>
+        <rdfs:label xml:lang="fr">aPourGenreMusical</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#aPourGroupe -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#aPourGroupe">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#estGroupeDe"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Artiste"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Groupe"/>
+        <rdfs:comment xml:lang="fr">aPourGroupe est la relation entre Artiste et Groupe</rdfs:comment>
+        <rdfs:label xml:lang="fr">aPourGroupe</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#aPourInterprete -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#aPourInterprete">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#aPourArtiste"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#estArtisteDe"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#estInterpreteDe"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Chanson"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Interprète"/>
+        <rdfs:comment xml:lang="fr">aPourInterprete est la relation entre Chanson et Interprete</rdfs:comment>
+        <rdfs:label xml:lang="fr">aPourInterprete</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#aPourMembre -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#aPourMembre">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#estMembreDe"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Groupe"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Artiste"/>
+        <rdfs:comment xml:lang="fr">aPourMembre est la relation entre Groupe et Artiste</rdfs:comment>
+        <rdfs:label xml:lang="fr">aPourMembre</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#aPourSousGenreMusical -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#aPourSousGenreMusical">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#estSousGenreMusicalDe"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#GenreMusical"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#SousGenreMusical"/>
+        <rdfs:comment xml:lang="fr">aPourSousGenreMusical est la relation entre GenreMusical et SousGenreMusical</rdfs:comment>
+        <rdfs:label xml:lang="fr">aPourSousGenreMusical</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#contient -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#contient">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#estContenuDans"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Album"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Chanson"/>
+        <rdfs:comment xml:lang="fr">contient est la relation entre Album et Chanson</rdfs:comment>
+        <rdfs:label xml:lang="fr">contient</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#estAccessibleA -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#estAccessibleA">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#renvoieVers"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Chanson"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#URLs"/>
+        <rdfs:comment xml:lang="fr">estAccessibleA est la relation entre Chanson et URLs</rdfs:comment>
+        <rdfs:label xml:lang="fr">estAccessibleA</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#estArtisteDe -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#estArtisteDe">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Artiste"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Chanson"/>
+        <rdfs:comment xml:lang="fr">estArtisteDe est la relation entre Artiste et Chanson</rdfs:comment>
+        <rdfs:label xml:lang="fr">estArtisteDe</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#estAuteurDe -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#estAuteurDe">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#estArtisteDe"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#aPourArtiste"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Auteur"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Chanson"/>
+        <rdfs:comment xml:lang="fr">estAuteurDe est la relation entre Auteur et Chanson</rdfs:comment>
+        <rdfs:label xml:lang="fr">estAuteurDe</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#estCompositeurDe -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#estCompositeurDe">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#estArtisteDe"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#aPourArtiste"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Compositeur"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Chanson"/>
+        <rdfs:comment xml:lang="fr">estCompositeurDe est la relation entre Compositeur et Chanson</rdfs:comment>
+        <rdfs:label xml:lang="fr">estCompositeurDe</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#estContenuDans -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#estContenuDans">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Chanson"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Album"/>
+        <rdfs:comment xml:lang="fr">estContenuDans est la relation entre Chanson et Album</rdfs:comment>
+        <rdfs:label xml:lang="fr">estContenuDans</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#estGenreMusicalDe -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#estGenreMusicalDe">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#GenreMusical"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Chanson"/>
+        <rdfs:comment xml:lang="fr">estGenreMusicalDe est la relation entre GenreMusical et Chanson</rdfs:comment>
+        <rdfs:label xml:lang="fr">estGenreMusicalDe</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#estGroupeDe -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#estGroupeDe">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Groupe"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Artiste"/>
+        <rdfs:comment xml:lang="fr">estGroupeDe est la relation entre Groupe et Artiste</rdfs:comment>
+        <rdfs:label xml:lang="fr">estGroupeDe</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#estInterpreteDe -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#estInterpreteDe">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#estArtisteDe"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#aPourArtiste"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Interprète"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Chanson"/>
+        <rdfs:comment xml:lang="fr">estInterpreteDe est la relation entre Interprete et Chanson</rdfs:comment>
+        <rdfs:label xml:lang="fr">estInterpreteDe</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#estMembreDe -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#estMembreDe">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Artiste"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Groupe"/>
+        <rdfs:comment xml:lang="fr">estMembreDe est la relation entre Artiste et Groupe</rdfs:comment>
+        <rdfs:label xml:lang="fr">estMembreDe</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#estSousGenreMusicalDe -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#estSousGenreMusicalDe">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#SousGenreMusical"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#GenreMusical"/>
+        <rdfs:comment xml:lang="fr">estSousGenreMusicalDe est la relation entre SousGenreMusical et GenreMusical</rdfs:comment>
+        <rdfs:label xml:lang="fr">estSousGenreMusicalDe</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#renvoieVers -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#renvoieVers">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#URLs"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Chanson"/>
+        <rdfs:comment xml:lang="fr">renvoieVers est la relation entre URLs et Chanson</rdfs:comment>
+        <rdfs:label xml:lang="fr">renvoieVers</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#aPourAnneeAlbumApparu -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#aPourAnneeAlbumApparu">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Album"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="fr">Annee d&apos;apparition de l&apos;album</rdfs:comment>
+        <rdfs:label xml:lang="fr">AnneeApparitionAlbum</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#aPourAnneeChansonApparue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#aPourAnneeChansonApparue">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Chanson"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="fr">Annee d&apos;apparition d&apos;une chanson</rdfs:comment>
+        <rdfs:label xml:lang="fr">AnneeApparitionChanson</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#aPourDateNaissance -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#aPourDateNaissance">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Artiste"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="fr">Date de naissance de l&apos;artiste</rdfs:comment>
+        <rdfs:label xml:lang="fr">DateNaissance</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#aPourDuree -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#aPourDuree">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Chanson"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="fr">Duree d&apos;une chanson</rdfs:comment>
+        <rdfs:label xml:lang="fr">Duree</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#aPourNationnalite -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#aPourNationnalite">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Artiste"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="fr">Nationnalite de l&apos;artiste</rdfs:comment>
+        <rdfs:label xml:lang="fr">Nationnalite</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#aPourNomArtiste -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#aPourNomArtiste">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Artiste"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="fr">Nom de l&apos;artiste</rdfs:comment>
+        <rdfs:label xml:lang="fr">Nom artiste</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#aPourNomDalbum -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#aPourNomDalbum">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Album"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="fr">Nom de l&apos;album</rdfs:comment>
+        <rdfs:label xml:lang="fr">Nom album</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#aPourNomGenre -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#aPourNomGenre">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#GenreMusical"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="fr">Nom du genre musical</rdfs:comment>
+        <rdfs:label xml:lang="fr">NomGenre</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#aPourNomGroupeMusical -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#aPourNomGroupeMusical">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Groupe"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="fr">Nom du groupe musical</rdfs:comment>
+        <rdfs:label xml:lang="fr">NomGroupe</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#aPourNomSousGenreMusical -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#aPourNomSousGenreMusical">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#SousGenreMusical"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="fr">Nom du sous genre musical</rdfs:comment>
+        <rdfs:label xml:lang="fr">aPourNomSousGenreMusical</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#aPourNumeroChanson -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#aPourNumeroChanson">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Album"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="fr">Numero d&apos;une chanson</rdfs:comment>
+        <rdfs:label xml:lang="fr">NumeroChanson</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#aPourPrenom -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#aPourPrenom">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Artiste"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="fr">Prenom de l&apos;artiste</rdfs:comment>
+        <rdfs:label xml:lang="fr">Prenom</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#aPourTitre -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#aPourTitre">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Chanson"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="fr">Titre d&apos;une chanson</rdfs:comment>
+        <rdfs:label xml:lang="fr">Titre</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#aPourURL -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#aPourURL">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#URLs"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="fr">URL de la chanson</rdfs:comment>
+        <rdfs:label xml:lang="fr">URL</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#aPourVente -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#aPourVente">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Album"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="fr">Nombre de ventes d&apos;un album</rdfs:comment>
+        <rdfs:label xml:lang="fr">Vente</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Album -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Album">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#contient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Chanson"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Artiste"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Chanson"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#GenreMusical"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Groupe"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#URLs"/>
+        <rdfs:comment xml:lang="fr">Un album de musique est un disque vinyle, un CD ou un ensemble de fichiers numériques présenté ensemble et regroupant un ensemble de titres d&apos;un chanteur, d&apos;un groupe ou d&apos;un musicien ou un ou plusieurs mix(s) d&apos;un ou plusieurs DJ(s).</rdfs:comment>
+        <rdfs:label xml:lang="fr">Album</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Artiste -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Artiste">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#estArtisteDe"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Chanson"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#estMembreDe"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Groupe"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#estArtisteDe"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Chanson"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Chanson"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#GenreMusical"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Groupe"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#URLs"/>
+        <rdfs:comment xml:lang="fr">Un artiste peut être un un compositeur, un auteur, ou bien un interprète.
+Il peut aussi mobiliser plus d&apos;une des trois qualités précédemment citées.</rdfs:comment>
+        <rdfs:label xml:lang="fr">Artiste</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Auteur -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Auteur">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Artiste"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#estAuteurDe"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Chanson"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Artiste"/>
+        <rdfs:comment xml:lang="fr">En musique, l&apos;auteur d&apos;une chanson est le parolier.</rdfs:comment>
+        <rdfs:label xml:lang="fr">Auteur</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Chanson -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Chanson">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#aPourArtiste"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Artiste"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#GenreMusical"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Groupe"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#URLs"/>
+        <rdfs:comment xml:lang="fr">Une chanson est un texte mis en musique, souvent divisé en couplets et refrain, destiné à être chanté.</rdfs:comment>
+        <rdfs:label xml:lang="fr">Chanson</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Compositeur -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Compositeur">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Artiste"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#estCompositeurDe"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Chanson"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Artiste"/>
+        <rdfs:comment xml:lang="fr">Un compositeur de musique est une personne musicienne qui élabore de la musique.</rdfs:comment>
+        <rdfs:label xml:lang="fr">Compositeur</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Diamant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Diamant">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Album"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#aPourVente"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">500000</xsd:minInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Album"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#DoublePlatine"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Or"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Platine"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#TriplePlatine"/>
+        <creator xml:lang="fr">Un disque de diamant est un album dont le nombre d&apos;exemplaires vendu est de 500000.</creator>
+        <rdfs:label xml:lang="fr">Diamant</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#DoublePlatine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#DoublePlatine">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Album"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#aPourVente"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200000</xsd:minInclusive>
+                                    </rdf:Description>
+                                    <rdf:Description>
+                                        <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">300000</xsd:maxExclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Album"/>
+        <rdfs:comment xml:lang="fr">Un disque double platine est un album dont les ventes sont entre 200000 et 300000 exemplaires.</rdfs:comment>
+        <rdfs:label xml:lang="fr">DoublePlatine</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#GenreMusical -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#GenreMusical">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#aPourSousGenreMusical"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#SousGenreMusical"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#estGenreMusicalDe"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Chanson"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#estGenreMusicalDe"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Chanson"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Groupe"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#URLs"/>
+        <rdfs:comment xml:lang="fr">Le genre musical est un classement qui permet de donner une catégorie à la musique.</rdfs:comment>
+        <rdfs:label xml:lang="fr">GenreMusical</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Groupe -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Groupe">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#estGroupeDe"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Artiste"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#aPourMembre"/>
+                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Artiste"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#URLs"/>
+        <rdfs:comment xml:lang="fr">Un Groupe est un regroupement d&apos;artistes</rdfs:comment>
+        <rdfs:label xml:lang="fr">Groupe</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Interprète -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Interprète">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Artiste"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#estInterpreteDe"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Chanson"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Artiste"/>
+        <rdfs:comment xml:lang="fr">Un interprète est un musicien (chanteur, instrumentiste, chef d&apos;orchestre ou chef de chœur) dont la spécialité est de réaliser un projet musical donné, planifié par un autre musicien, appelé compositeur.</rdfs:comment>
+        <rdfs:label xml:lang="fr">Interprète</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Or -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Or">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Album"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#aPourVente"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50000</xsd:minInclusive>
+                                    </rdf:Description>
+                                    <rdf:Description>
+                                        <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100000</xsd:maxExclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Album"/>
+        <rdfs:comment xml:lang="fr">Un disque d&apos;or est un album dont le nombre de ventes est entre 50000 et 100000.</rdfs:comment>
+        <rdfs:label>Or</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Platine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Platine">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Album"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#aPourVente"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100000</xsd:minInclusive>
+                                    </rdf:Description>
+                                    <rdf:Description>
+                                        <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200000</xsd:maxExclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Album"/>
+        <rdfs:comment xml:lang="fr">Un disque de platine est un album ayant entre 100000 et 200000 exemplaires vendus.</rdfs:comment>
+        <rdfs:label xml:lang="fr">Platine</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#SousGenreMusical -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#SousGenreMusical">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#GenreMusical"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#estSousGenreMusicalDe"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#GenreMusical"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#GenreMusical"/>
+        <rdfs:comment xml:lang="fr">Le sous genre musical est une sous catégorie d&apos;un genre musical</rdfs:comment>
+        <rdfs:label xml:lang="fr">SousGenreMusical</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#TriplePlatine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#TriplePlatine">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Album"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#aPourVente"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">300000</xsd:minInclusive>
+                                    </rdf:Description>
+                                    <rdf:Description>
+                                        <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">500000</xsd:maxExclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Album"/>
+        <rdfs:comment xml:lang="fr">Un disque triple platine est un album qui a entre 300000 et 500000 exemplaires vendus.</rdfs:comment>
+        <rdfs:label xml:lang="fr">TriplePlatine</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#URLs -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#URLs">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#renvoieVers"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Chanson"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:comment>URLs contient les urls de chansons</rdfs:comment>
+        <rdfs:label>URLs</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/music-ontology#A_la_vie_a_l&apos;amour -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/music-ontology#A_la_vie_a_l&apos;amour">
+        <rdf:type rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Chanson"/>
+        <aPourArtiste rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Soprano"/>
+        <aPourGenreMusical rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Rap"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Acte_de_ballet -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Acte_de_ballet">
+        <rdf:type rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#SousGenreMusical"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Alunissons -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Alunissons">
+        <rdf:type rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Chanson"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Aria -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Aria">
+        <rdf:type rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#SousGenreMusical"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Beat_it -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Beat_it">
+        <rdf:type rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Chanson"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Black_Or_White -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Black_Or_White">
+        <rdf:type rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Chanson"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Chanson_française -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Chanson_française">
+        <rdf:type rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#GenreMusical"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Classique -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Classique">
+        <rdf:type rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#GenreMusical"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Claude_Debussy -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Claude_Debussy">
+        <rdf:type rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Compositeur"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Country -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Country">
+        <rdf:type rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#GenreMusical"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Dangerous -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Dangerous">
+        <rdf:type rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Album"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Diamant"/>
+        <contient rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Black_Or_White"/>
+        <aPourAnneeAlbumApparu rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1991</aPourAnneeAlbumApparu>
+        <aPourVente rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1000000</aPourVente>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Destin -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Destin">
+        <rdf:type rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Album"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#TriplePlatine"/>
+        <contient rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Sans_peine"/>
+        <aPourVente rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">300000</aPourVente>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Ernest_Bourget -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Ernest_Bourget">
+        <rdf:type rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Auteur"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Experience -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Experience">
+        <rdf:type rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Album"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Freedom -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Freedom">
+        <rdf:type rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Chanson"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Gioachino_Rossini -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Gioachino_Rossini">
+        <rdf:type rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Auteur"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Hard_Rock -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Hard_Rock">
+        <rdf:type rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#SousGenreMusical"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Ipséité -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Ipséité">
+        <rdf:type rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Album"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Platine"/>
+        <contient rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Signaler"/>
+        <aPourVente rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">170000</aPourVente>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Jacqueline_du_Pré -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Jacqueline_du_Pré">
+        <rdf:type rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Interprète"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Jimi_Hendrix -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Jimi_Hendrix">
+        <rdf:type rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Artiste"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Johnny_Hallyday -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Johnny_Hallyday">
+        <rdf:type rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Artiste"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Les_Etoiles_Vagabondes -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Les_Etoiles_Vagabondes">
+        <rdf:type rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Album"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Platine"/>
+        <contient rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Alunissons"/>
+        <aPourVente rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">190000</aPourVente>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#M.electronique -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#M.electronique">
+        <rdf:type rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#GenreMusical"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Madison_Twist -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Madison_Twist">
+        <rdf:type rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Album"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Marian_Anderson -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Marian_Anderson">
+        <rdf:type rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Interprète"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Maurice_Ravel -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Maurice_Ravel">
+        <rdf:type rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Compositeur"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Metal -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Metal">
+        <rdf:type rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#SousGenreMusical"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Michael_Jackson -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Michael_Jackson">
+        <rdf:type rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Artiste"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Phoenix -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Phoenix">
+        <rdf:type rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Album"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Diamant"/>
+        <contient rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/music-ontology#A_la_vie_a_l&apos;amour"/>
+        <aPourAnneeAlbumApparu rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2018</aPourAnneeAlbumApparu>
+        <aPourVente rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">500000</aPourVente>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Pop -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Pop">
+        <rdf:type rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#GenreMusical"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Pump -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Pump">
+        <rdf:type rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#DoublePlatine"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Rap -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Rap">
+        <rdf:type rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#GenreMusical"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Rock -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Rock">
+        <rdf:type rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#GenreMusical"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Sans_peine -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Sans_peine">
+        <rdf:type rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Chanson"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Signaler -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Signaler">
+        <rdf:type rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Chanson"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Soprano -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Soprano">
+        <rdf:type rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Artiste"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#The_Jackson_Five -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#The_Jackson_Five">
+        <rdf:type rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Groupe"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#The_Jimi_Hendrix_Experience -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#The_Jimi_Hendrix_Experience">
+        <rdf:type rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Groupe"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#The_Promise -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#The_Promise">
+        <rdf:type rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Or"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Thriller -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Thriller">
+        <rdf:type rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Album"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Transe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Transe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#GenreMusical"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#URL_Freedom -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#URL_Freedom">
+        <rdf:type rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#URLs"/>
+        <renvoieVers rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Freedom"/>
+        <aPourURL>https://www.youtube.com/watch?v=wDvlErh5zcc</aPourURL>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#URL_beat_it -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#URL_beat_it">
+        <rdf:type rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#URLs"/>
+        <renvoieVers rdf:resource="http://www.semanticweb.org/marwan/ontologies/2019/11/untitled-ontology-10#Beat_it"/>
+        <aPourURL>https://www.youtube.com/watch?v=oRdxUFDoQe0</aPourURL>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#priorVersion">
+        <description></description>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

@@ -1,0 +1,172 @@
+.containerlogo {
+position:absolute;
+    left: 0%;
+    top: 0%;
+
+    z-index: 9;
+    width: 1499px;
+    height: 600px;
+}
+
+.list{
+
+  width: 300px;
+  margin-left: 170px;
+}
+
+h2 {
+
+  font: 400 40px/1.5 Helvetica, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+ul {
+
+ margin:0 auto;
+  list-style-type: none;
+
+  padding: 0;
+}
+
+li {
+
+  font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
+  border-bottom: 1px solid #ccc;
+}
+
+li:last-child {
+  border: none;
+}
+
+li a {
+  text-decoration: none;
+  color: #000;
+
+  -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+  transition: font-size 0.3s ease, background-color 0.3s ease;
+  display: block;
+  width: 200px;
+}
+
+li a:hover {
+  font-size: 30px;
+  background: #f6f6f6;
+}
+
+div{
+	background-color: white;
+}
+
+p {
+font-size: 2em;
+font-family: Sans-serif, Times, serif;
+line-height: 1.25em;
+margin: 1.25em 5em;
+text-align: justify;
+}
+
+h1{
+  font-size: 3em;
+	font-family:  Sans-serif, Times, serif;;
+line-height: 1.25em;
+margin: 0em 0em;
+text-align: center;
+}
+
+body{
+	background-color: lightgrey;
+	background: url("http://localhost/zeroland/images/abstract_minimalistic_jelly_candy_bean_simple_triangles_clean_3840x2400_wallpaper_Wallpaper%20HD_3840x2400_www.paperhi.com.jpg");
+  background-attachment: fixed;
+}
+
+.aboutpane{
+    position: relative;
+    box-shadow: 10px 10px 5px #888888;
+
+}
+
+  .textbox {
+		left:43%;
+		top:45%;
+    border: 1px solid #c4c4c4;
+		position: absolute;
+    height: 40px;
+    width: 275px;
+    font-size: 20px;
+		align-self: center;
+		z-index: 999;
+    padding: 4px 4px 4px 4px;
+    border-radius: 0px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    box-shadow: 0px 0px 8px #d9d9d9;
+    -moz-box-shadow: 0px 0px 8px #d9d9d9;
+    -webkit-box-shadow: 0px 0px 8px #d9d9d9;
+}
+
+.textbox:focus {
+    outline: none;
+    border: 1px solid #7bc1f7;
+    box-shadow: 0px 0px 8px #7bc1f7;
+    -moz-box-shadow: 0px 0px 8px #7bc1f7;
+    -webkit-box-shadow: 0px 0px 8px #7bc1f7;
+}
+
+
+.myButton {
+	position: absolute;
+	-moz-box-shadow: 0px -1px 26px 0px #000000;
+	-webkit-box-shadow: 0px -1px 26px 0px #000000;
+	box-shadow: 0px -1px 26px 0px #000000;
+	background-color:#e82727;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:20px;
+	padding:12px 38px;
+	text-decoration:none;
+  border: none;
+  top:55%;
+	left:48%;
+	z-index: 1000;
+}
+.myButton:hover {
+	background-color:#a61e32;
+}
+.myButton:active {
+	position:absolute;
+	top:55%;
+}
+
+
+.spbtn {
+ position: relative;
+	-moz-box-shadow: 0px -1px 26px 0px #000000;
+	-webkit-box-shadow: 0px -1px 26px 0px #000000;
+	box-shadow: 0px -1px 26px 0px #000000;
+	background-color:#e82727;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:20px;
+	padding:12px 38px;
+	text-decoration:none;
+  border: none;
+  top:55%;
+	left:48%;
+
+}
+.spbtn:hover {
+	background-color:#a61e32;
+}
+.spbtn:active {
+	position:relative;
+	top:1px;
+}

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Ontologie de musique </title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@1.x/dist/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+   <style> 
+.active {
+	color:red;
+	//background:#F48FB1;
+	background:#FFEB3B;
+}
+
+.width75 {
+	width:80px;
+}
+
+.width15 {
+	width:15px;
+}
+
+.width200 {
+	width:250px;
+}
+
+.font13 .v-label {
+	font-size:14px !important;
+}
+
+.cpointer {
+	cursor:pointer;
+}
+
+.pull-right {
+	position: absolute !important;
+	right: -10px !important;
+	top: -10px !important;
+}
+
+/* Let's get this party started */
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+    /*background:#FFEB3B;*/
+    background:#FDD835;
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	background: rgba(255,0,0,0.4);
+	opacity:0;
+}
+
+.fixed-widgets-layout {
+	position:relative;
+	height:100%;
+	padding-top:200px !important;
+}
+
+.fixed-widget {
+	position:absolute;
+	width:100%;
+	top:0px;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: transform 2s ease , opacity 2s linear;
+}
+
+.fade-enter {
+  transform: translateX(-100vw);
+  opacity:0;
+}
+.fade-enter-to {
+  opacity:1;
+}
+
+.fade-leave-to {
+  transform: translateX(100vw);
+  opacity:0;
+}
+.fade-leave {
+  opacity:1;
+}
+</style>
+</head>
+<body>
+
+  <div id="app" >
+    <v-app background=0d81dc>
+
+      <v-toolbar app light ref="tb">
+        <v-toolbar-title class="font-weight-black"> Projet Ontologies & Web Semantics : Musique </v-toolbar-title>
+        <v-spacer></v-spacer>
+        <v-toolbar-items>
+          <v-btn flat v-on:click="select_tab(1)" v-bind:class="{active: tab==1}">Recherche</v-btn>
+        </v-toolbar-items>
+      </v-toolbar>
+
+      <v-content v-if="tab == 1">
+        <v-container fill-height>
+          <v-layout>
+            <v-flex md8 offset-md2 >
+              <vue-position-sticky :offset-Top="tbh">
+                <v-card class="pa-3" elevation=24>
+                  <v-autocomplete v-model="token" :items="choices" label="Requete" color="#FFEB3B" append-icon="close" :append-icon-cb="clear_token">
+                  </v-autocomplete>
+                  <v-combobox
+                    v-model="criteria"
+                    :items="criterias"
+                    label="Critère"
+                  ></v-combobox>
+                  <v-layout>
+                    <v-spacer></v-spacer>
+                    <v-btn light @click="describe_token">Rechercher</v-btn>
+                    <v-spacer></v-spacer>
+                  </v-layout>
+                </v-card>
+              </vue-position-sticky>
+
+              <div class="mt-0" v-if="description.length != 0">
+                <v-card class="pa-2 my-2 " v-for="item in description">
+                  <v-layout align-center justify-space-around row fill-height>
+                    <div class="width75 text-md-right">Nom: {{item.name}}</div>
+                    <div class="width75">Genre: {{item.genre}} </div>
+                    <div class="width75 text-md-left">Artiste: {{item.artist}} </div>
+                  </v-layout>
+                </v-card>
+              </div>
+
+            </v-flex>
+          </v-layout>
+        </v-container>
+      </v-content>
+    </v-app>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@1.x/dist/vuetify.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue-position-sticky@0.2.0/dist/vue-position-sticky.umd.min.js"></script>
+  <script> var app = new Vue({
+	el: '#app',
+	data: {
+		tab: 1,
+		tbh: 64,
+		token: "None",
+    choices: [ {% for item in list %} '{{item}}', {% endfor %} ],
+    criteria: 'None',
+    criterias: [ {% for c in criterias %} '{{c}}', {% endfor %} ],
+    description: [ {% for item in albums %} { 'name': '{{item.0}}', 'artist': '{{item.1}}', 'vente': '{{item.2}}' }, {% endfor %} ],  
+	},
+	methods: {
+		select_tab: function(selected) {
+			this.tab = selected;
+		},
+		describe_token: function(){
+            window.location = "/engine/search/"+this.criteria+"/"+this.token+"/";
+    },
+		clear_token: function() {
+			this.token = "";
+			this.description = [ ];
+		},
+	},
+});
+</script>
+</body>
+</html>
